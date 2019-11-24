@@ -18,6 +18,8 @@ class graph
     	}
 
     	void bfs(int s);
+		void dfs(int s);
+		void DFSUtil(int v, map<int,bool>&visited);
 };
 
 void graph::bfs(int s)
@@ -27,6 +29,9 @@ void graph::bfs(int s)
 	for(auto i=m.begin();i!=m.end();i++)
 	{
 		visited.insert({i->first,false});
+		for(auto j=i->second.begin();j!=i->second.end();j++){
+			visited.insert({*j,false});
+		}
 	}
 	q.push_back(s);
 	while(!q.empty())
@@ -44,7 +49,26 @@ void graph::bfs(int s)
 		}
 	}
 }
-
+void graph::DFSUtil(int v, map<int,bool>& visited) {
+	visited[v]=true;
+	cout<<v<<" ";
+	for(auto i=m[v].begin();i!=m[v].end();i++){
+		if(!visited[*i]){
+			DFSUtil(*i,visited);
+		}
+}
+}
+void graph::dfs(int s){
+	map<int,bool> visited;
+	for(auto i=m.begin();i!=m.end();i++)
+	{
+		visited.insert({i->first,false});
+		for(auto j=i->second.begin();j!=i->second.end();j++){
+			visited.insert({*j,false});
+		}
+	}
+	DFSUtil(s,visited);
+}
 int main()
 {
 	graph g;
@@ -62,5 +86,7 @@ int main()
 	g.addedge(5,7);
 	g.addedge(7,8);
 	g.bfs(1);
+	cout<<endl;
+	g.dfs(1);
 	cout<<endl;
 }
