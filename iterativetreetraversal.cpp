@@ -33,7 +33,7 @@ void inordertraversalwithoutunorderedmap(node* root){
     s.push({curr,state+1});
     if(state == 0)s.push({curr->left,0});
     if(state == 1)cout<<curr->data<<" ";
-    if(state == 2)s.push({curr->right,2});
+    if(state == 2)s.push({curr->right,0});
   }
   
 }
