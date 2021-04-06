@@ -19,6 +19,7 @@ void inorderiterative(node* root){
       else if(cnt[curr] == 1)cout<<curr->data<<" ";
       else if(cnt[curr]== 2)s.push(curr->right);
       else s.pop();
+      cnt[curr]++;
    }
 }
 stack<pair<node*,int>> s;
