@@ -25,8 +25,15 @@ stack<pair<node*,int>> s;
 void inordertraversalwithoutunorderedmap(node* root){
   s.push({root,0});
   while(!s.empty()){
-    auto curr=s.top();
-    
+    auto t=s.top();
+    node* curr=t.first;
+    int state=t.second;
+    s.pop();
+    if(curr == null || state == 3)continue;
+    s.push({curr,state+1});
+    if(state == 0)s.push({curr->left,0});
+    if(state == 1)cout<<curr->data<<" ";
+    if(state == 2)s.push({curr->right,2});
   }
   
 }
