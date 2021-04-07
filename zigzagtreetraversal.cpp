@@ -6,7 +6,7 @@ using namespace std;
 struct Node{
   int data;
   struct Node *left,*right;
-}
+};
 
 struct Node* newNode(int data)
 {
@@ -64,7 +64,7 @@ int main(){
     root->right->right = newNode(4);
     cout << "ZigZag Order traversal of binary tree is \n";
  
-    zizagtraversal(root);
+    zigzagtreetraversal(root);
  
     return 0;
 
