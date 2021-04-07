@@ -1,5 +1,12 @@
 #include<iostream>
-
+/*recursive implimentation of height of binary tree
+  --->if root == NULL:
+          return 0
+       then find max from left side of the tree and then find max height from right side of the tree compare and add +1 and return which one is the greater one.
+       
+       
+       simple and easy
+*/
 using namespace std;
 struct Node {
   int data;
