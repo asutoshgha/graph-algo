@@ -42,6 +42,12 @@ void zigzagtreetraversal(Node* root){
             nextlevel.push(temp->left);
         }
       }
+      
+      if(currlevel.empty()){
+        lefttoright=!lefttoright;
+        swap(currlevel,nextlevel);
+      }
+      
     
     }
   }
