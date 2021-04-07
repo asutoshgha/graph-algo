@@ -7,7 +7,7 @@ struct Node {
 };
 
 int heightoftree(Node* root){
-  if(root == null)
+  if(root == NULL)
     return 0;
   int left=heightoftree(root->left);
   int right=heightoftree(root->right);
@@ -21,7 +21,7 @@ int heightoftree(Node* root){
 
 Node* newNode(int data)
 {
-    Node* Node = new Node();
+    Node* Node = new struct Node;
     Node->data = data;
     Node->left = NULL;
     Node->right = NULL;
@@ -36,6 +36,6 @@ int main(){
     root->left->left = newNode(4);
     root->left->right = newNode(5);
      
-    cout << "Height of tree is " << maxDepth(root);
+    cout << "Height of tree is " << heightoftree(root);
     return 0;
 }
